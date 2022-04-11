@@ -1,25 +1,31 @@
-<ul *ngFor = 'let quote of quotes'>
-    <div  *ngIf= 'quote.upvotes == highest; then highlight else empty'>
-
+<div class="overlay">
+    <h1>
+      {{title}}
+    </h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4">
+          <app-quotes-form (add)="addedQuote($event)"></app-quotes-form>
+        </div>
+      </div>
+      <div class="container quotes-list">
+        <h3>Quotes List</h3>
+        <div class="all-cards">
+          <div *ngFor="let quote of sortQuotes let i= index" class="card" style="width: 400px;"  >
+            <div class="card-body">
+              <h3 class="card-title" appHighlightQoute >{{quote.title}}</h3>
+              <p class="card-text" id="param">{{quote.quote}}</p>
+              <app-details></app-details>
+              <!-- <app-details *ngIf= 'quote.showInfo' bind-quote='quotes' (isRead)='quoteDelete($event,i)'></app-details> -->
+              <span class="card-subtitle mb-2">Submitted by: <span id="name">{{quote.name}} </span><span id="date">On: <span id="datecolor">{{quote.datePosted|date}}</span></span></span>
+             
+            </div>
+            <button (click)='displayInfo(i)' class="btn btn-info btn-sm" id="quotes-button" >More Quote details</button>
+          </div>
+          
+        </div>
+      </div>
     </div>
- <ng-template #highlight>
-    <li appHighlight>
-        username:{{quote.name}} 
-            <span>Quote:{{quote.quote}}</span> 
-            Quote Author:{{quote.author}}
-            <span class="text-primary">Upvotes:{{quote.upvotes}}</span>
-            <span class="text-danger">Downvotes:{{quote.downvotes}}</span>
-        </li>
- </ng-template>
- <ng-template #empty>
-    <li>
-        username:{{quote.name}} 
-            <span>Quote:{{quote.quote}}</span> 
-            Quote Author:{{quote.author}}
-            <span class="text-primary">Upvotes:{{quote.upvotes}}</span>
-            <span class="text-warning">Downvotes:{{quote.downvotes}}</span>
-        </li>
- </ng-template>
+  
+  </div>
 
-    
-</ul>

@@ -1,1 +1,27 @@
-<p>details works!</p>
+<h6 class="card-subtitle mb-2 text-muted"> - {{quoted.author}} <span id="when">Posted: {{quoted.datePosted|dateCount}} days ago.</span> </h6>
+<div class="container-fluid" id="buttons">
+  <button class="btn btn-sm btn-success" (click)='upvote()'>{{quoted.likes}} <i class="far fa-thumbs-up"  ></i> </button> 
+  <button class="btn btn-sm hate" id="hate" (click)='downvote()'>{{quoted.dislikes}}<i class="far fa-thumbs-down" ></i> </button> 
+  <button class="btn btn-sm btn-danger" id="del" (click)='deleteQuote(true)'><i class="fa fa-trash" aria-hidden="true"></i>
+  </button> 
+</div>
+
+<!-- <div class="bg-dark text-white my-2 ">
+    <div class="d-flex  w-100 justify-content-around ">
+        <div class="w-50  my-2 ">
+            <p>QuoteAuthor: <span>{{quoteInfo.quoteAuthor}}</span></p>
+            <p>PostedBy: <span>{{quoteInfo.quotePoster}}</span></p>
+    
+        </div>
+        <div class="w-25  my-2">
+            <p>likes: <span>{{quoteInfo.upvotes}}</span></p>
+            <p>Dislikes: <span>{{quoteInfo.downvotes}}</span></p>
+    
+        </div>
+        
+    </div>
+    <div class="d-flex justify-content-between" >
+        <button (click)="goalRead(true)" class="btn ms-4 mb-2">deleteQuote</button>
+        <p class="me-3">This quote is <span> {{quoteInfo.created|quoteAge}}</span>days old.</p>
+    </div>
+</div> -->

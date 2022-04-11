@@ -1,23 +1,24 @@
-
-<form #quotesForm="ngForm" (ngSubmit)="submitQuote()">
-    <div class="form-group">
-
-        <label for="name">Enter your Name</label>
-        <input type="text" required class="form-control" id="name" placeholder="Enter your name" :required>
-        Display {{newQuote.name}}
-    </div><br> 
-    <div class="form-group">
-
-        <label for="quote">Quote</label>
-        <textarea class="form-control" id="Quote" rows="5" required></textarea>
-
-    </div><br>
-    <div class="form-group">
-
-        <label for="author">Author</label>
-        <input type="text" required class="form-control" id="Author" placeholder="Quote Author" required>
-
-    </div><br>
-</form>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
+<div class="container-fluid">
+    <h2 class="heading">Add Quotes</h2>
+    <hr> 
+    <form>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" required class="form-control" id="name"  name="name" minlength="3" required>
+          </div> 
+        <div class="form-group">
+          <label for="name">Quote Tittle</label>
+          <input type="text" required class="form-control" id="title" name="title"  required>
+          </div>
+        <div class="form-group">
+          <label for="description">Quote</label>
+          <textarea class="form-control" id="quote" rows="2" required name="quote" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="name">Quote Author</label>
+          <input type="text" required class="form-control" id="author" name="author"  :required>
+          </div>
+        
+        <button type="submit" class="btn btn-sm btn-success">Add Quote</button>
+    </form>
+</div>

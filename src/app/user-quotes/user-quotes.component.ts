@@ -1,23 +1,48 @@
-import { Component, OnInit } from '@angular/core';
-import { Quote } from '../quote'; 
+import { Component, OnInit,} from '@angular/core';
+import {Quote} from '../quote'
 
 @Component({
   selector: 'app-user-quotes',
   templateUrl: './user-quotes.component.html',
   styleUrls: ['./user-quotes.component.css']
 })
-export class UserQuotesComponent implements OnInit {
-  quotes: Quote[] = [
-    new Quote('Yakob',1,'Living' , 'Yogi',7,0),
-    new Quote('Joshua',2,"The more i know, the more i realize i don't know" , "Somebody's son",0,0),
-    new Quote('User0',3,'Yes we can' , 'Barrack Obama',6,0),
+export class QuoteComponent implements OnInit {
+  title = 'Best Inspirational Quotes';
+  quotes:Quote[] = [
+    new Quote (1,'Yakob','Yoga', 'Yoga is the best', 'Buddha', new Date(2000,1,1),0,0),
+    new Quote (1,'Ayzaq','Life hacks','Life is what happens when you are busy making other plans.','Dalai Lama', new Date(2022,3,24),0,0),
+    new Quote (2,'Shee','Auccess in life','Many failures in life are people who did not realize how close they were to success when they gave up.','John Lennon',new Date(2020,8,2),0,0),
+    new Quote (3,'Mason','Life choices','Life imposes things on you that you cannot control, but you still have the choice of how you’re going to live through this..','Celine Dion',new Date(2018,10,13),0,0),
+    new Quote (4,'Hudson','Happiness','Life imposes things on you that you cannot control, but you still have the choice of how you’re going to live through this.','Leonardo DiCaprio',new Date(2021,6,9),0,0),
+   
   ];
-  arr: number[] = this.quotes.map(quote =>quote.upvotes)
-  highest =Math.max(...this.arr);
-
+  get sortQuotes() {
+    return this.quotes.sort((a, b) => {
+      return <any>new Date(b.datePosted) - <any>new Date(a.datePosted);
+    });
+  }  
+  addedQuote(quote){
+    let arraysize = this.quotes.length;
+    quote.id = arraysize+1;
+    quote.completeDate = new Date(quote.completeDate)
+    this.quotes.push(quote)
+  }
+  quoteDelete(isRead, index){
+    if (isRead) {
+      let toDelete = confirm(`Are you sure you want to delete this Quote?`)
+      if(toDelete){
+        this.quotes.splice(index,1);
+      }
+      
+    }
+  }
+ 
+  displayInfo(index){
+    this.quotes[index].showInfo = !this.quotes[index].showInfo;
+  }
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
