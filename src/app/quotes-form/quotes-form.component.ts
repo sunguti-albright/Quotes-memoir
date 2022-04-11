@@ -15,7 +15,14 @@ export class QuoteFormComponent implements OnInit {
   quoteForm!: FormGroup;
 
   addQuote(){
-   
+    let quote = new Quote(0,
+      this.quoteForm.controls["name"].value,
+      this.quoteForm.controls["title"].value,
+      this.quoteForm.controls["quote"].value,
+      this.quoteForm.controls["author"].value,
+      new Date(),
+      0,
+     0);
   this.add.emit(quote);
 
   this.quoted = new Quote(0,"","","","",new Date(),0,0);
