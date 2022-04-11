@@ -9,12 +9,11 @@ import {Quote} from '../quote'
 export class QuoteComponent implements OnInit {
   title = 'Best Inspirational Quotes';
   quotes:Quote[] = [
-    new Quote (1,'Yakob','Yoga', 'Yoga is the best', 'Buddha', new Date(2000,1,1),0,0),
-    new Quote (1,'Ayzaq','Life hacks','Life is what happens when you are busy making other plans.','Dalai Lama', new Date(2022,3,24),0,0),
-    new Quote (2,'Shee','Auccess in life','Many failures in life are people who did not realize how close they were to success when they gave up.','John Lennon',new Date(2020,8,2),0,0),
-    new Quote (3,'Mason','Life choices','Life imposes things on you that you cannot control, but you still have the choice of how you’re going to live through this..','Celine Dion',new Date(2018,10,13),0,0),
-    new Quote (4,'Hudson','Happiness','Life imposes things on you that you cannot control, but you still have the choice of how you’re going to live through this.','Leonardo DiCaprio',new Date(2021,6,9),0,0),
-   
+    new Quote (1,'Yakob','Yoga', 'Yoga is about rising to a new balance in every aspect of life', 'Buddha', new Date(2000,1,1),0,0),
+    new Quote (4,'Mason','Life choices','Life imposes things on you that you cannot control, but you still have the choice of how you’re going to live through this..','Celine Dion',new Date(2018,10,13),0,0),
+    new Quote (1,'Yakob','Yoga', 'Yoga is about rising to a new balance in every aspect of life', 'Buddha', new Date(2000,1,1),0,0),
+    new Quote (4,'Mason','Life choices','Life imposes things on you that you cannot control, but you still have the choice of how you’re going to live through this..','Celine Dion',new Date(2018,10,13),0,0),
+  
   ];
   get sortQuotes() {
     return this.quotes.sort((a, b) => {

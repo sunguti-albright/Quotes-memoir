@@ -1,20 +1,21 @@
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-export { DetailsComponent } from './details.component';
+import { AuthorDetailComponent } from './details.component';
 
-describe('DetailsComponent', () => {
-  let component: DetailsComponent;
-  let fixture: ComponentFixture<DetailsComponent>;
+describe('AuthorDetailComponent', () => {
+  let component: AuthorDetailComponent;
+  let fixture: ComponentFixture<AuthorDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DetailsComponent ]
+      declarations: [ AuthorDetailComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DetailsComponent);
+    fixture = TestBed.createComponent(AuthorDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -23,3 +24,5 @@ describe('DetailsComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+

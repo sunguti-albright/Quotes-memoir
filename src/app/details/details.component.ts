@@ -2,13 +2,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {Quote} from '../quote'
 
 @Component({
-  selector: 'app-details',
+  selector: 'author-detail',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
 export class AuthorDetailComponent implements OnInit {
   @Input() quoted!: Quote;
+
   @Output() isRead = new EventEmitter<boolean>();
+
   deleteQuote(read:boolean){
     this.isRead.emit(read);
   }
@@ -24,25 +26,3 @@ export class AuthorDetailComponent implements OnInit {
   }
 
 }
-
-// import { Component, OnInit , Input, Output, EventEmitter} from '@angular/core';
-// import { Quote } from '../quote'
-
-// @Component({
-//     selector: 'app-details',
-//     templateUrl: './details.component.html',
-//     styleUrls: ['./details.component.css']
-//   })
-// export class QuoteDetailsComponent implements OnInit {
-//   @Input() quoteInfo!: Quote;
-//   @Output() deleteGoal = new EventEmitter<boolean>();
-
-//   constructor() { }
-
-//   ngOnInit(): void {
-//   }
-//   goalRead(read:boolean){
-//     this.deleteGoal.emit(read);
-//   }
-
-// }
