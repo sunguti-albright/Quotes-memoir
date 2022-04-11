@@ -31,13 +31,13 @@ export class QuoteFormComponent implements OnInit {
     private formBuilder: FormBuilder
   ) { }
 
-  // ngOnInit() {
-  //   this.quoteForm = this.formBuilder.group({
-  //     name: [null, Validators.required],
-  //     title: [null, Validators.required],
-  //     quote: [null, Validators.required],
-  //     author: [null, Validators.required],
-  //   })
+   ngOnInit() {
+     this.quoteForm = this.formBuilder.group({
+       name: [null, Validators.required],
+       title: [null, Validators.required],
+       quote: [null, Validators.required],
+       author: [null, Validators.required],
+     })
   }
 
 }
