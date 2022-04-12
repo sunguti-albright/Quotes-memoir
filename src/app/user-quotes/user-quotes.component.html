@@ -15,22 +15,16 @@
             <div class="card-body">
               <h3>{{quote.title}}</h3>
               <p class="card-text" id="param">{{quote.quote}}</p>
-              <author-detail *ngIf= 'quote.showInfo' bind[quoted]='quotes' && (isRead)='quoteDelete($event,i)'></author-detail> 
+              <p>-{{quote.author}}</p>
+               <app-details *ngIf='quote.showInfo' bind-quoted='quote' (isRead)='quoteDelete($event,i)'></app-details>  
               Submitted by: {{quote.name}} 
               On: {{quote.datePosted|date}}
-              <!-- <span class="card-subtitle mb-2">
-               
-                <span id="name"></span>
-              <span id="date">
-
-              <span id="datecolor"></span>
-              </span> -->
-
              
-            </div>
+             </div>
             <button (click)='displayInfo(i)' class="btn btn-info" id="quotes-button" >Quote details</button>
-          </div>
+          </div> 
           
+           
         </div>
       </div>
     </div>
