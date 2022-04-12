@@ -3,18 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { QuoteComponent } from './user-quotes/user-quotes.component';
-import { QuoteFormComponent } from './quotes-form/quotes-form.component';
-import { AuthorDetailComponent } from './details/details.component';
+import { UserQuotesComponent } from './user-quotes/user-quotes.component';
+import { QuotesFormComponent } from './quotes-form/quotes-form.component';
+import { DetailsComponent } from './details/details.component';
 import { HighlightDirective } from './highlight.directive';
 import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuoteComponent,
-    QuoteFormComponent,
-    AuthorDetailComponent,
+    UserQuotesComponent,
+    QuotesFormComponent,
+    DetailsComponent,
     HighlightDirective,
     DateCountPipe
 

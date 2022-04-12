@@ -4,3 +4,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 p,h3{
     font-size: 17px;
 }
+body{
+    background-color: #c4c4c4;
+}

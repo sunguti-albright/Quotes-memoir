@@ -2,11 +2,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {Quote} from '../quote'
 
 @Component({
-  selector: 'author-detail',
+  selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class AuthorDetailComponent implements OnInit {
+export class DetailsComponent implements OnInit {
+
   @Input() quoted!: Quote;
 
   @Output() isRead = new EventEmitter<boolean>();
